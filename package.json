@@ -6,6 +6,7 @@
   "scripts": {
     "generate": "node scripts/generate-animations.mjs",
     "verify": "node scripts/verify-animations.mjs",
+    "verify:release-tag": "node scripts/verify-release-tag.mjs",
     "validate": "npm run generate && npm run verify && node scripts/validate.mjs",
     "build": "node scripts/build.mjs"
   },
