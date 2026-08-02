@@ -12,7 +12,7 @@
     "build": "node scripts/build.mjs"
   },
   "devDependencies": {
-    "@cyrene2008/cyrene-name-roller": "file:vendor/cyrene2008-cyrene-name-roller-1.1.0.tgz"
+    "@cyrene2008/cyrene-name-roller": "file:vendor/cyrene-name-roller-plugin-sdk-1.1.1.tgz"
   },
   "engines": {
     "node": ">=20"
