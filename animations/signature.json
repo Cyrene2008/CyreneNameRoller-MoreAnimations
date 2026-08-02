@@ -1,0 +1,1501 @@
+{
+  "schemaVersion": 1,
+  "title": "Cyrene Signature Motion",
+  "description": "36 polished non-linear WAAPI presets for CyreneNameRoller 1.1.",
+  "presets": [
+    {
+      "id": "silk-slide",
+      "target": "page.transition",
+      "label": "丝绸滑移",
+      "description": "柔和景深与轻微缩放组成的顺滑页面过渡。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(52px) scale(.965)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 480,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-30px) scale(.982)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 360,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-52px) scale(.965)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 480,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(30px) scale(.982)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 360,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "depth-portal",
+      "target": "page.transition",
+      "label": "景深门廊",
+      "description": "以透视感和快速聚焦完成空间切换。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(38px) scale(.9) rotateY(-4deg)",
+              "filter": "blur(9px) brightness(1.15)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 540,
+            "easing": "cubic-bezier(.12,.82,.18,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-24px) scale(1.035) rotateY(2deg)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 420,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-38px) scale(.9) rotateY(-4deg)",
+              "filter": "blur(9px) brightness(1.15)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 540,
+            "easing": "cubic-bezier(.12,.82,.18,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(24px) scale(1.035) rotateY(2deg)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 420,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "prism-sweep",
+      "target": "page.transition",
+      "label": "棱镜掠影",
+      "description": "轻量色彩与剪裁感的现代切页效果。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(46px) skewX(-3deg) scale(.97)",
+              "filter": "blur(4px) saturate(1.4)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 500,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-28px) skewX(2deg) scale(.985)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 380,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-46px) skewX(-3deg) scale(.97)",
+              "filter": "blur(4px) saturate(1.4)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 500,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(28px) skewX(2deg) scale(.985)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 380,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "soft-orbit",
+      "target": "page.transition",
+      "label": "柔性环绕",
+      "description": "小角度旋转与弹性落位，活泼但不喧闹。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(34px) translateY(12px) rotate(1.8deg) scale(.95)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 560,
+            "easing": "cubic-bezier(.16,1.18,.28,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-22px) translateY(-8px) rotate(-1deg) scale(.98)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 440,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-34px) translateY(12px) rotate(1.8deg) scale(.95)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 560,
+            "easing": "cubic-bezier(.16,1.18,.28,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(22px) translateY(-8px) rotate(-1deg) scale(.98)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 440,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "glass-focus",
+      "target": "page.transition",
+      "label": "玻璃聚焦",
+      "description": "由朦胧玻璃质感迅速聚焦到正文。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(28px) scale(1.025)",
+              "filter": "blur(12px) brightness(1.18)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 470,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-20px) scale(.985)",
+              "filter": "blur(8px)"
+            }
+          ],
+          "options": {
+            "duration": 350,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-28px) scale(1.025)",
+              "filter": "blur(12px) brightness(1.18)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 470,
+            "easing": "cubic-bezier(.22,1,.36,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(20px) scale(.985)",
+              "filter": "blur(8px)"
+            }
+          ],
+          "options": {
+            "duration": 350,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "elastic-drift",
+      "target": "page.transition",
+      "label": "弹性漂移",
+      "description": "克制的弹性位移，适合连续浏览多个页面。",
+      "tags": [
+        "page",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(58px) scale(.94)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 590,
+            "easing": "cubic-bezier(.2,1.35,.35,1)"
+          }
+        },
+        "forward.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(-34px) scale(.975)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 470,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        },
+        "back.enter": {
+          "keyframes": [
+            {
+              "opacity": 0,
+              "transform": "translateX(-58px) scale(.94)",
+              "filter": "blur(5px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            }
+          ],
+          "options": {
+            "duration": 590,
+            "easing": "cubic-bezier(.2,1.35,.35,1)"
+          }
+        },
+        "back.leave": {
+          "keyframes": [
+            {
+              "opacity": 1,
+              "transform": "translateX(0) scale(1)",
+              "filter": "blur(0px)"
+            },
+            {
+              "opacity": 0,
+              "transform": "translateX(34px) scale(.975)",
+              "filter": "blur(3px)"
+            }
+          ],
+          "options": {
+            "duration": 470,
+            "easing": "cubic-bezier(.55,0,1,.45)"
+          }
+        }
+      }
+    },
+    {
+      "id": "halo-bloom",
+      "target": "roller.finish",
+      "label": "光环绽放",
+      "description": "结果从柔光中轻微弹跳并稳定落位。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.72)",
+            "filter": "blur(9px) brightness(1.8)",
+            "textShadow": "0 0 0 rgba(255,255,255,0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.09)",
+            "filter": "blur(0px) brightness(1.2)",
+            "textShadow": "0 0 34px currentColor",
+            "offset": 0.68
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1)",
+            "filter": "blur(0px) brightness(1)",
+            "textShadow": "0 0 0 rgba(255,255,255,0)"
+          }
+        ],
+        "options": {
+          "duration": 720,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "spring-crown",
+      "target": "roller.finish",
+      "label": "冠冕弹跳",
+      "description": "上扬、回弹与细微旋转构成高级强调。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(24px) scale(.78) rotate(-1.6deg)",
+            "filter": "blur(6px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(-7px) scale(1.075) rotate(.6deg)",
+            "filter": "blur(0px)",
+            "offset": 0.62
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(0) scale(1) rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 760,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "chroma-pulse",
+      "target": "roller.finish",
+      "label": "虹彩脉冲",
+      "description": "短促色彩增强与聚焦脉冲，不使用线性闪烁。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.86)",
+            "filter": "blur(7px) saturate(1.9) hue-rotate(-12deg)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.06)",
+            "filter": "blur(0px) saturate(1.45) hue-rotate(8deg)",
+            "offset": 0.58
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1)",
+            "filter": "saturate(1) hue-rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 690,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "spotlight-lift",
+      "target": "roller.finish",
+      "label": "聚光升格",
+      "description": "像舞台聚光般从下方升起并收束。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(30px) scale(.9)",
+            "filter": "brightness(2.2) blur(8px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(-5px) scale(1.045)",
+            "filter": "brightness(1.25) blur(0px)",
+            "offset": 0.7
+          },
+          {
+            "transform": "translateY(0) scale(1)",
+            "filter": "brightness(1)"
+          }
+        ],
+        "options": {
+          "duration": 740,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "orbit-settle",
+      "target": "roller.finish",
+      "label": "轨道落位",
+      "description": "沿短弧线进入并以柔和惯性稳定。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(-24px) translateY(18px) rotate(-3deg) scale(.84)",
+            "filter": "blur(5px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateX(5px) translateY(-4px) rotate(.8deg) scale(1.045)",
+            "filter": "blur(0px)",
+            "offset": 0.66
+          },
+          {
+            "transform": "translateX(0) translateY(0) rotate(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 780,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "crystalline-pop",
+      "target": "roller.finish",
+      "label": "晶体聚合",
+      "description": "剪裁轮廓、锐化与弹性缩放营造晶体聚合感。",
+      "tags": [
+        "roller",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.68) rotate(-1deg)",
+            "filter": "blur(10px) contrast(1.5)",
+            "clipPath": "inset(42% 18% 42% 18% round 20px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.08) rotate(.3deg)",
+            "filter": "blur(0px) contrast(1.12)",
+            "clipPath": "inset(0% 0% 0% 0% round 0px)",
+            "offset": 0.7
+          },
+          {
+            "transform": "scale(1)",
+            "filter": "contrast(1)"
+          }
+        ],
+        "options": {
+          "duration": 820,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "cascade-float",
+      "target": "card.deal",
+      "label": "层叠浮现",
+      "description": "卡片以轻盈的层叠浮动进入牌桌。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(48px) rotateX(8deg) scale(.88)",
+            "filter": "blur(5px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(-5px) rotateX(-1deg) scale(1.035)",
+            "filter": "blur(0px)",
+            "offset": 0.7
+          },
+          {
+            "transform": "translateY(0) rotateX(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 680,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "fan-arrival",
+      "target": "card.deal",
+      "label": "扇面入场",
+      "description": "小角度侧旋像展开纸牌般进入。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(-38px) translateY(22px) rotate(-7deg) scale(.9)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateX(4px) translateY(-3px) rotate(1.2deg) scale(1.025)",
+            "offset": 0.72
+          },
+          {
+            "transform": "translateX(0) translateY(0) rotate(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 700,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "velvet-drop",
+      "target": "card.deal",
+      "label": "天鹅绒落牌",
+      "description": "低速下落与柔焦带来沉稳质感。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(-42px) scale(.94)",
+            "filter": "blur(8px) brightness(1.12)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(5px) scale(1.02)",
+            "filter": "blur(0px)",
+            "offset": 0.7
+          },
+          {
+            "transform": "translateY(0) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 760,
+          "easing": "cubic-bezier(.3,.8,.25,1)"
+        }
+      }
+    },
+    {
+      "id": "perspective-dock",
+      "target": "card.deal",
+      "label": "透视停靠",
+      "description": "从轻微透视角度快速停靠到牌桌。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(44px) rotateY(-12deg) scale(.84)",
+            "filter": "blur(5px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateX(-4px) rotateY(2deg) scale(1.035)",
+            "filter": "blur(0px)",
+            "offset": 0.67
+          },
+          {
+            "transform": "translateX(0) rotateY(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 720,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "feather-landing",
+      "target": "card.deal",
+      "label": "羽落停驻",
+      "description": "缓慢漂移后轻柔落位，适合较少卡片。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(20px) translateY(-34px) rotate(4deg) scale(.92)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateX(-4px) translateY(4px) rotate(-.8deg) scale(1.018)",
+            "offset": 0.74
+          },
+          {
+            "transform": "translateX(0) translateY(0) rotate(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 820,
+          "easing": "cubic-bezier(.3,.8,.25,1)"
+        }
+      }
+    },
+    {
+      "id": "magnetic-snap",
+      "target": "card.deal",
+      "label": "磁吸归位",
+      "description": "快速接近并以磁吸般的回弹停下。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(58px) scale(.76)",
+            "filter": "blur(3px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(-8px) scale(1.06)",
+            "filter": "blur(0px)",
+            "offset": 0.6
+          },
+          {
+            "transform": "translateY(0) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 620,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "hinge-reveal",
+      "target": "card.flip",
+      "label": "铰链揭晓",
+      "description": "围绕轻微侧轴的空间翻转强调。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "rotateY(-8deg) scale(.94)",
+            "filter": "brightness(1.35)"
+          },
+          {
+            "transform": "rotateY(5deg) scale(1.055)",
+            "filter": "brightness(1.12)",
+            "offset": 0.62
+          },
+          {
+            "transform": "rotateY(0deg) scale(1)",
+            "filter": "brightness(1)"
+          }
+        ],
+        "options": {
+          "duration": 660,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "prism-flip",
+      "target": "card.flip",
+      "label": "棱镜翻光",
+      "description": "翻牌瞬间加入克制的色彩折射。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "scale(.9) rotateZ(-1.5deg)",
+            "filter": "blur(4px) saturate(1.8) hue-rotate(-18deg)"
+          },
+          {
+            "transform": "scale(1.06) rotateZ(.7deg)",
+            "filter": "blur(0px) saturate(1.35) hue-rotate(10deg)",
+            "offset": 0.64
+          },
+          {
+            "transform": "scale(1) rotateZ(0deg)",
+            "filter": "saturate(1) hue-rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 700,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "corkscrew",
+      "target": "card.flip",
+      "label": "丝带旋身",
+      "description": "小幅旋转与纵向回弹形成丝带般的揭晓。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "translateY(18px) rotate(-5deg) scale(.86)",
+            "opacity": 0.35
+          },
+          {
+            "transform": "translateY(-5px) rotate(1.5deg) scale(1.045)",
+            "opacity": 1,
+            "offset": 0.68
+          },
+          {
+            "transform": "translateY(0) rotate(0deg) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 740,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "soft-vault",
+      "target": "card.flip",
+      "label": "柔性跃迁",
+      "description": "卡片整体轻跃并在结果出现后稳定。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "translateY(14px) scale(.92)",
+            "filter": "blur(3px)"
+          },
+          {
+            "transform": "translateY(-10px) scale(1.045)",
+            "filter": "blur(0px)",
+            "offset": 0.58
+          },
+          {
+            "transform": "translateY(0) scale(1)"
+          }
+        ],
+        "options": {
+          "duration": 680,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "luminous-turn",
+      "target": "card.flip",
+      "label": "流光转面",
+      "description": "亮度光晕沿翻牌过程收束。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "scale(.9)",
+            "filter": "brightness(1.8) blur(5px)",
+            "boxShadow": "0 0 0 rgba(255,255,255,0)"
+          },
+          {
+            "transform": "scale(1.055)",
+            "filter": "brightness(1.18) blur(0px)",
+            "boxShadow": "0 0 36px rgba(255,255,255,.32)",
+            "offset": 0.62
+          },
+          {
+            "transform": "scale(1)",
+            "filter": "brightness(1)",
+            "boxShadow": "0 0 0 rgba(255,255,255,0)"
+          }
+        ],
+        "options": {
+          "duration": 720,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "elastic-turn",
+      "target": "card.flip",
+      "label": "弹性转场",
+      "description": "强调回弹速度感，同时保持卡面易读。",
+      "tags": [
+        "card",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "transform": "scale(.82) rotate(2deg)",
+            "opacity": 0.5
+          },
+          {
+            "transform": "scale(1.08) rotate(-.8deg)",
+            "opacity": 1,
+            "offset": 0.56
+          },
+          {
+            "transform": "scale(.985) rotate(.2deg)",
+            "offset": 0.82
+          },
+          {
+            "transform": "scale(1) rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 760,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "jackpot-bloom",
+      "target": "lottery.finish",
+      "label": "大奖绽放",
+      "description": "抽奖结果以庆典式光晕和弹跳揭晓。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.68) translateY(18px)",
+            "filter": "blur(10px) brightness(2.2)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.1) translateY(-5px)",
+            "filter": "blur(0px) brightness(1.25)",
+            "textShadow": "0 0 38px currentColor",
+            "offset": 0.66
+          },
+          {
+            "transform": "scale(1) translateY(0)",
+            "filter": "brightness(1)",
+            "textShadow": "0 0 0 rgba(255,255,255,0)"
+          }
+        ],
+        "options": {
+          "duration": 820,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "aurora-reveal",
+      "target": "lottery.finish",
+      "label": "极光揭晓",
+      "description": "色彩流转后聚焦到最终奖品。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.82)",
+            "filter": "blur(9px) saturate(1.9) hue-rotate(-20deg)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.065)",
+            "filter": "blur(0px) saturate(1.5) hue-rotate(14deg)",
+            "offset": 0.62
+          },
+          {
+            "transform": "scale(1)",
+            "filter": "saturate(1) hue-rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 860,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "comet-arrival",
+      "target": "lottery.finish",
+      "label": "彗星抵达",
+      "description": "从侧上方快速掠入并柔和停驻。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(48px) translateY(-24px) scale(.78) rotate(2deg)",
+            "filter": "blur(8px)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateX(-6px) translateY(4px) scale(1.055) rotate(-.5deg)",
+            "filter": "blur(0px)",
+            "offset": 0.68
+          },
+          {
+            "transform": "translateX(0) translateY(0) scale(1) rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 780,
+          "easing": "cubic-bezier(.16,1.18,.28,1)"
+        }
+      }
+    },
+    {
+      "id": "prestige-rise",
+      "target": "lottery.finish",
+      "label": "典藏升格",
+      "description": "沉稳上升、短暂停驻，再以高级感收束。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateY(34px) scale(.88)",
+            "filter": "blur(6px) contrast(1.25)"
+          },
+          {
+            "opacity": 1,
+            "transform": "translateY(-7px) scale(1.045)",
+            "filter": "blur(0px) contrast(1.08)",
+            "offset": 0.7
+          },
+          {
+            "transform": "translateY(0) scale(1)",
+            "filter": "contrast(1)"
+          }
+        ],
+        "options": {
+          "duration": 840,
+          "easing": "cubic-bezier(.3,.8,.25,1)"
+        }
+      }
+    },
+    {
+      "id": "radiant-focus",
+      "target": "lottery.finish",
+      "label": "辉光聚焦",
+      "description": "从高亮失焦快速凝聚成清晰结果。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(1.16)",
+            "filter": "blur(15px) brightness(2.4)"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(.975)",
+            "filter": "blur(0px) brightness(1.12)",
+            "offset": 0.68
+          },
+          {
+            "transform": "scale(1)",
+            "filter": "brightness(1)"
+          }
+        ],
+        "options": {
+          "duration": 760,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "constellation-pop",
+      "target": "lottery.finish",
+      "label": "星群跃现",
+      "description": "清脆弹跳配合柔和阴影扩散。",
+      "tags": [
+        "lottery",
+        "non-linear"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.64) rotate(-1.2deg)",
+            "textShadow": "0 0 0 currentColor"
+          },
+          {
+            "opacity": 1,
+            "transform": "scale(1.12) rotate(.4deg)",
+            "textShadow": "0 0 42px currentColor",
+            "offset": 0.58
+          },
+          {
+            "transform": "scale(.98) rotate(0deg)",
+            "textShadow": "0 0 12px currentColor",
+            "offset": 0.82
+          },
+          {
+            "transform": "scale(1)",
+            "textShadow": "0 0 0 rgba(255,255,255,0)"
+          }
+        ],
+        "options": {
+          "duration": 880,
+          "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "ambient-pulse",
+      "target": "global.transition",
+      "label": "环境脉冲",
+      "description": "一次克制的径向光晕脉冲。",
+      "tags": [
+        "global",
+        "non-linear",
+        "ambient"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.82)",
+            "background": "radial-gradient(circle at 50% 48%, rgba(255,255,255,.2), transparent 58%)"
+          },
+          {
+            "opacity": 0.7,
+            "transform": "scale(1.06)",
+            "offset": 0.46
+          },
+          {
+            "opacity": 0,
+            "transform": "scale(1.18)"
+          }
+        ],
+        "options": {
+          "duration": 780,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "aurora-breath",
+      "target": "global.transition",
+      "label": "极光呼吸",
+      "description": "柔和双色极光短暂掠过背景。",
+      "tags": [
+        "global",
+        "non-linear",
+        "aurora"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "filter": "blur(22px) saturate(1.2)",
+            "background": "radial-gradient(ellipse at 20% 30%, rgba(92,180,255,.22), transparent 48%), radial-gradient(ellipse at 80% 65%, rgba(255,100,190,.2), transparent 52%)"
+          },
+          {
+            "opacity": 0.78,
+            "filter": "blur(9px) saturate(1.45)",
+            "offset": 0.5
+          },
+          {
+            "opacity": 0,
+            "filter": "blur(18px) saturate(1)"
+          }
+        ],
+        "options": {
+          "duration": 1100,
+          "easing": "cubic-bezier(.3,.8,.25,1)"
+        }
+      }
+    },
+    {
+      "id": "ribbon-sweep",
+      "target": "global.transition",
+      "label": "流光横扫",
+      "description": "细腻斜向光带快速扫过画面。",
+      "tags": [
+        "global",
+        "non-linear",
+        "ribbon"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "translateX(-55%) skewX(-14deg)",
+            "background": "linear-gradient(105deg, transparent 35%, rgba(255,255,255,.18) 48%, rgba(255,150,220,.2) 52%, transparent 65%)"
+          },
+          {
+            "opacity": 0.8,
+            "transform": "translateX(0) skewX(-14deg)",
+            "offset": 0.45
+          },
+          {
+            "opacity": 0,
+            "transform": "translateX(55%) skewX(-14deg)"
+          }
+        ],
+        "options": {
+          "duration": 900,
+          "easing": "cubic-bezier(.22,1,.36,1)"
+        }
+      }
+    },
+    {
+      "id": "radial-bloom",
+      "target": "global.transition",
+      "label": "径向绽放",
+      "description": "从结果区域扩散的柔和圆形能量。",
+      "tags": [
+        "global",
+        "non-linear",
+        "bloom"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.45)",
+            "filter": "blur(12px)",
+            "background": "radial-gradient(circle, rgba(255,255,255,.24), rgba(255,110,195,.12) 32%, transparent 68%)"
+          },
+          {
+            "opacity": 0.78,
+            "transform": "scale(1)",
+            "filter": "blur(5px)",
+            "offset": 0.48
+          },
+          {
+            "opacity": 0,
+            "transform": "scale(1.4)",
+            "filter": "blur(15px)"
+          }
+        ],
+        "options": {
+          "duration": 980,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "prism-veil",
+      "target": "global.transition",
+      "label": "棱镜薄幕",
+      "description": "低透明彩色薄幕折射后自然消退。",
+      "tags": [
+        "global",
+        "non-linear",
+        "prism"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "filter": "blur(16px) hue-rotate(-18deg)",
+            "background": "linear-gradient(125deg, rgba(80,180,255,.14), transparent 38%, rgba(255,105,190,.17) 62%, transparent)"
+          },
+          {
+            "opacity": 0.68,
+            "filter": "blur(6px) hue-rotate(12deg)",
+            "offset": 0.5
+          },
+          {
+            "opacity": 0,
+            "filter": "blur(14px) hue-rotate(0deg)"
+          }
+        ],
+        "options": {
+          "duration": 1050,
+          "easing": "cubic-bezier(.3,.8,.25,1)"
+        }
+      }
+    },
+    {
+      "id": "starlight-wash",
+      "target": "global.transition",
+      "label": "星辉洗礼",
+      "description": "中心高光与外围柔光形成短暂星辉。",
+      "tags": [
+        "global",
+        "non-linear",
+        "starlight"
+      ],
+      "animation": {
+        "keyframes": [
+          {
+            "opacity": 0,
+            "transform": "scale(.72)",
+            "filter": "brightness(1.5) blur(16px)",
+            "background": "radial-gradient(circle at 50% 50%, rgba(255,255,255,.28), rgba(160,190,255,.12) 24%, transparent 62%)"
+          },
+          {
+            "opacity": 0.75,
+            "transform": "scale(1.04)",
+            "filter": "brightness(1.16) blur(6px)",
+            "offset": 0.52
+          },
+          {
+            "opacity": 0,
+            "transform": "scale(1.26)",
+            "filter": "brightness(1) blur(14px)"
+          }
+        ],
+        "options": {
+          "duration": 1020,
+          "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    }
+  ]
+}

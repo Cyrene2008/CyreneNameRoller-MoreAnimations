@@ -1,0 +1,7 @@
+node_modules/
+.npm-cache/
+.cnrp-stage-*/
+dist/
+dist/*.cnrp
+*.log
+.DS_Store

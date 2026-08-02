@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "cn.cyrene2008.more-animations",
+  "name": "更多动画",
+  "version": "1.0.0",
+  "author": "Cyrene2008",
+  "description": "为页面切换、随机点名、翻牌与抽奖提供更丰富的高级动画和环境视觉效果。",
+  "engine": {
+    "min": "1.1.0",
+    "max": "1.1.0"
+  },
+  "icon": "assets/icon.svg",
+  "readme": "README.md",
+  "permissions": [
+    "storage:read",
+    "storage:write",
+    "events:draw",
+    "events:lifecycle",
+    "ui:animations",
+    "ui:visual-surfaces"
+  ],
+  "contributes": {
+    "pages": [
+      {
+        "id": "animation-settings",
+        "title": "更多动画",
+        "titleEn": "More Animations",
+        "icon": "sparkle-24-regular",
+        "location": "plugins",
+        "description": "分别选择页面、点名、翻牌、抽奖与全局过渡动画，并配置背景视觉效果。",
+        "native": {
+          "type": "settings",
+          "settingsKey": "settings",
+          "controls": [
+            { "id": "visual-enabled", "type": "toggle", "path": "visualEnabled", "label": "启用环境视觉效果", "description": "在核心内容后方绘制低干扰的粒子、极光与光带。", "default": true },
+            { "id": "visual-mode", "type": "select", "path": "visualMode", "label": "视觉样式", "description": "选择背景效果的主要表现形式。", "default": "hybrid", "options": [{ "value": "hybrid", "label": "混合氛围" }, { "value": "aurora", "label": "柔和极光" }, { "value": "particles", "label": "星尘粒子" }, { "value": "ribbons", "label": "流光丝带" }] },
+            { "id": "visual-intensity", "type": "range", "path": "intensity", "label": "效果强度", "description": "调整背景视觉的密度与亮度。", "min": 0.2, "max": 1, "step": 0.05, "default": 0.55 },
+            { "id": "visual-speed", "type": "range", "path": "speed", "label": "流动速度", "description": "调整环境效果的运动节奏。", "min": 0.35, "max": 1.5, "step": 0.05, "default": 0.75 },
+            { "id": "page-animation", "type": "animation-select", "target": "page.transition", "packId": "signature", "label": "页面切换动画", "description": "用于主页面及插件页面之间的前进、后退过渡。" },
+            { "id": "roller-animation", "type": "animation-select", "target": "roller.finish", "packId": "signature", "label": "点名结果强调动画", "description": "随机点名揭晓结果时使用。" },
+            { "id": "card-deal-animation", "type": "animation-select", "target": "card.deal", "packId": "signature", "label": "发牌动画", "description": "翻牌模式生成卡片时使用。" },
+            { "id": "card-flip-animation", "type": "animation-select", "target": "card.flip", "packId": "signature", "label": "翻牌强调动画", "description": "卡片揭晓人员时使用。" },
+            { "id": "lottery-animation", "type": "animation-select", "target": "lottery.finish", "packId": "signature", "label": "抽奖结果动画", "description": "奖品抽取完成时使用。" },
+            { "id": "global-animation", "type": "animation-select", "target": "global.transition", "packId": "signature", "label": "全局氛围动画", "description": "在页面切换或结果揭晓时叠加轻量环境效果。" }
+          ]
+        }
+      }
+    ],
+    "animationPacks": [
+      {
+        "id": "signature",
+        "title": "Cyrene Signature Motion",
+        "description": "36 个使用非线性缓动构建的高级 WAAPI 动画预设。",
+        "source": "animations/signature.json"
+      }
+    ],
+    "visualSurfaces": [
+      {
+        "id": "ambient-canvas",
+        "title": "环境视觉画布",
+        "entry": "src/visual-surface.js",
+        "placement": "background",
+        "defaultEnabled": true,
+        "events": [
+          "app:ready",
+          "app:route-changed",
+          "app:theme-changed",
+          "app:resize",
+          "plugin:storage-changed",
+          "draw:result",
+          "roller:result",
+          "card:result",
+          "lottery:result",
+          "lottery:assign-result"
+        ]
+      }
+    ]
+  }
+}
