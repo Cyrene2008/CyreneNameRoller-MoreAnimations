@@ -1,13 +1,14 @@
 {
   "name": "cyrene-name-roller-more-animations",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-animations.mjs",
     "verify": "node scripts/verify-animations.mjs",
+    "verify:visual-loop": "node scripts/verify-visual-loop.mjs",
     "verify:release-tag": "node scripts/verify-release-tag.mjs",
-    "validate": "npm run generate && npm run verify && node scripts/validate.mjs",
+    "validate": "npm run generate && npm run verify && npm run verify:visual-loop && node scripts/validate.mjs",
     "build": "node scripts/build.mjs"
   },
   "devDependencies": {

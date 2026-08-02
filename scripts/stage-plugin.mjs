@@ -8,7 +8,8 @@ const publishFiles = Object.freeze([
   'LICENSE',
   'assets/icon.svg',
   'animations/signature.json',
-  'src/visual-surface.js'
+  'src/visual-surface.js',
+  'src/visual-loop-controller.js'
 ])
 
 export async function stagePlugin() {

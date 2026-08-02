@@ -1,4 +1,5 @@
 import { defineVisualSurface, PluginEvents } from '@cyrene2008/cyrene-name-roller/plugin-sdk'
+import { createVisualLoopController } from './visual-loop-controller.js'
 
 const DEFAULTS = Object.freeze({
   visualEnabled: true,
@@ -14,14 +15,17 @@ let settings = { ...DEFAULTS }
 let width = 1
 let height = 1
 let dpr = 1
-let timer = 0
 let startedAt = performance.now()
 let lastFrame = startedAt
 let accent = '#e65cae'
 let dark = false
+let perfAnimations = true
+let reducedMotion = false
 let particles = []
 let bursts = []
 let routeEnergy = 0
+let loop
+let settingsLoadId = 0
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value))
 const random = (min, max) => min + Math.random() * (max - min)
@@ -43,7 +47,9 @@ function rgba(color, alpha) {
 
 async function loadSettings() {
   if (!request) return
+  const loadId = ++settingsLoadId
   const saved = await request('storage.read', { key: 'settings' })
+  if (!request || loadId !== settingsLoadId) return
   settings = {
     ...DEFAULTS,
     ...(saved || {}),
@@ -51,6 +57,7 @@ async function loadSettings() {
     speed: clamp(Number(saved?.speed ?? DEFAULTS.speed), 0.35, 1.5)
   }
   syncParticles()
+  reconcileLoop()
 }
 
 function makeParticle(seed = Math.random()) {
@@ -73,7 +80,7 @@ function syncParticles() {
 }
 
 function clear() {
-  context2d.clearRect(0, 0, canvas.width, canvas.height)
+  if (context2d && canvas) context2d.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 function drawAurora(time) {
@@ -172,21 +179,29 @@ function drawBursts(delta) {
   bursts = bursts.filter(burst => burst.life > 0)
 }
 
-function frame(now = performance.now()) {
+function renderFrame(now) {
   const delta = Math.min(50, Math.max(1, now - lastFrame))
   lastFrame = now
   clear()
-  if (settings.visualEnabled) {
-    routeEnergy = Math.max(0, routeEnergy - delta * .0014)
-    drawAurora(now - startedAt)
-    drawRibbons(now - startedAt)
-    drawParticles(delta, now - startedAt)
-    drawBursts(delta)
-  }
-  timer = setTimeout(() => frame(performance.now()), 16)
+  routeEnergy = Math.max(0, routeEnergy - delta * .0014)
+  drawAurora(now - startedAt)
+  drawRibbons(now - startedAt)
+  drawParticles(delta, now - startedAt)
+  drawBursts(delta)
+}
+
+function shouldRun() {
+  return !!context2d && settings.visualEnabled !== false && perfAnimations !== false && reducedMotion !== true
+}
+
+function reconcileLoop() {
+  if (!loop) return
+  if (shouldRun()) loop.start()
+  else loop.stop()
 }
 
 function addBurst(kind = 'draw') {
+  if (!shouldRun()) return
   const palette = kind === 'lottery' ? '#ffd078' : kind === 'card' ? '#7bb7ff' : accent
   bursts.push({
     x: width * random(.38, .62),
@@ -206,10 +221,20 @@ defineVisualSurface({
     context2d = canvas.getContext('2d', { alpha: true, desynchronized: true })
     request = surfaceContext.request
     context2d.setTransform(dpr, 0, 0, dpr, 0, 0)
+    loop = createVisualLoopController({
+      onStart(now) {
+        startedAt = now
+        lastFrame = now
+      },
+      onFrame: renderFrame,
+      onStop() {
+        bursts = []
+        routeEnergy = 0
+        clear()
+      }
+    })
     await loadSettings()
-    startedAt = performance.now()
-    lastFrame = startedAt
-    frame(startedAt)
+    reconcileLoop()
   },
 
   onResize(viewport) {
@@ -225,6 +250,9 @@ defineVisualSurface({
     if (event === PluginEvents.APP_THEME_CHANGED) {
       accent = payload?.accent || accent
       dark = !!payload?.dark
+      if (typeof payload?.perfAnimations === 'boolean') perfAnimations = payload.perfAnimations
+      if (typeof payload?.reducedMotion === 'boolean') reducedMotion = payload.reducedMotion
+      reconcileLoop()
       return
     }
     if (event === PluginEvents.APP_ROUTE_CHANGED) {
@@ -237,9 +265,13 @@ defineVisualSurface({
   },
 
   deactivate() {
-    clearTimeout(timer)
+    loop?.stop()
+    loop = null
+    settingsLoadId += 1
     particles = []
     bursts = []
     request = null
+    context2d = null
+    canvas = null
   }
 })
