@@ -13,8 +13,8 @@ const expectedTargets = Object.freeze([
   'global.transition'
 ])
 
-if (manifest.id !== 'cn.cyrene2008.more-animations' || manifest.version !== '1.0.0') {
-  throw new Error('Unexpected plugin identity or version')
+if (manifest.id !== 'cn.cyrene2008.more-animations' || !/^1\.0\.\d+$/.test(manifest.version)) {
+  throw new Error('Unexpected plugin identity or release version')
 }
 if (manifest.engine?.min !== '1.1.0' || manifest.engine?.max !== '1.1.0') {
   throw new Error('More Animations must target plugin API 1.1.0')
@@ -53,4 +53,3 @@ for (const target of expectedTargets) {
 }
 
 console.log(`Verified ${pack.presets.length} presets: ${expectedTargets.map(target => `${target}=${counts[target]}`).join(', ')}`)
-

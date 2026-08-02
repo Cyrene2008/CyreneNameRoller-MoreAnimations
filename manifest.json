@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "cn.cyrene2008.more-animations",
   "name": "更多动画",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Cyrene2008",
   "description": "为页面切换、随机点名、翻牌与抽奖提供更丰富的高级动画和环境视觉效果。",
   "engine": {

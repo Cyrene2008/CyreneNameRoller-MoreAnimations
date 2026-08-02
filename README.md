@@ -1,8 +1,8 @@
 # 更多动画 / More Animations
 
-CyreneNameRoller 官方动画扩展，版本 1.0.0，需要插件 API 1.1.0。
+CyreneNameRoller 官方动画扩展，版本 1.0.1，需要插件 API 1.1.0 final。
 
-Official motion extension for CyreneNameRoller, version 1.0.0. Plugin API 1.1.0 is required.
+Official motion extension for CyreneNameRoller, version 1.0.1. The final Plugin API 1.1.0 SDK is required.
 
 ## 中文
 
@@ -36,7 +36,12 @@ npm run validate
 npm run build
 ```
 
-打包产物位于 `dist/more-animations-1.0.0.cnrp`。推送 `v1.0.0` 标签后，仓库内的 Release workflow 会验证版本、构建插件并上传 `.cnrp`，但本地开发不会自动发布。
+打包产物位于 `dist/more-animations-1.0.1.cnrp`。推送版本标签后，仓库内的 Release workflow 会验证版本、构建插件并上传 `.cnrp`，但本地开发不会自动发布。
+
+### 更新日志
+
+- 1.0.1：切换到最终版 CyreneNameRoller Plugin SDK 1.1.0，确保与正式宿主动画注册、原生设置页和视觉层协议完全兼容。
+- 1.0.0：首次发布，提供 36 个动画预设与 OffscreenCanvas 环境视觉层。
 
 ## English
 
@@ -59,7 +64,12 @@ npm run validate
 npm run build
 ```
 
-The package is emitted as `dist/more-animations-1.0.0.cnrp`. The included validation and release workflows follow the official plugin repository conventions.
+The package is emitted as `dist/more-animations-1.0.1.cnrp`. The included validation and release workflows follow the official plugin repository conventions.
+
+### Changelog
+
+- 1.0.1: Updated to the final CyreneNameRoller Plugin SDK 1.1.0 for full compatibility with the production animation registry, native settings UI, and visual-surface protocol.
+- 1.0.0: Initial release with 36 animation presets and an OffscreenCanvas ambient visual surface.
 
 ## License
 
