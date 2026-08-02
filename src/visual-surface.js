@@ -20,7 +20,6 @@ let lastFrame = startedAt
 let accent = '#e65cae'
 let dark = false
 let perfAnimations = true
-let reducedMotion = false
 let particles = []
 let bursts = []
 let routeEnergy = 0
@@ -191,7 +190,7 @@ function renderFrame(now) {
 }
 
 function shouldRun() {
-  return !!context2d && settings.visualEnabled !== false && perfAnimations !== false && reducedMotion !== true
+  return !!context2d && settings.visualEnabled !== false && perfAnimations !== false
 }
 
 function reconcileLoop() {
@@ -251,7 +250,6 @@ defineVisualSurface({
       accent = payload?.accent || accent
       dark = !!payload?.dark
       if (typeof payload?.perfAnimations === 'boolean') perfAnimations = payload.perfAnimations
-      if (typeof payload?.reducedMotion === 'boolean') reducedMotion = payload.reducedMotion
       reconcileLoop()
       return
     }
