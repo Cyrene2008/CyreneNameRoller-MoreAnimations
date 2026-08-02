@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "id": "cn.cyrene2008.more-animations",
   "name": "更多动画",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "author": "Cyrene2008",
   "description": "为页面切换、随机点名、翻牌与抽奖提供更丰富的高级动画和环境视觉效果。",
   "engine": {
-    "min": "1.1.0",
-    "max": "1.1.0"
+    "min": "1.2.0",
+    "max": "1.2.0"
   },
   "icon": "assets/icon.svg",
   "readme": "README.md",
@@ -50,7 +50,7 @@
       {
         "id": "signature",
         "title": "Cyrene Signature Motion",
-        "description": "36 个使用非线性缓动构建的高级 WAAPI 动画预设。",
+        "description": "54 个混合 GSAP 与 WAAPI 的高级非线性动画预设。",
         "source": "animations/signature.json"
       }
     ],

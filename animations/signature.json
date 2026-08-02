@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Cyrene Signature Motion",
-  "description": "36 polished non-linear WAAPI presets for CyreneNameRoller 1.1.",
+  "description": "54 polished mixed GSAP and WAAPI presets for CyreneNameRoller Plugin API 1.2.",
   "presets": [
     {
       "id": "silk-slide",
@@ -508,6 +508,297 @@
       }
     },
     {
+      "id": "cinematic-curtain",
+      "target": "page.transition",
+      "label": "电影幕切",
+      "description": "以方向感明确的剪裁幕布和景深完成页面交接。",
+      "tags": [
+        "page",
+        "gsap",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "x": 56,
+              "clipPath": "inset(0 100% 0 0 round 18px)",
+              "filter": "blur(8px)"
+            },
+            "to": {
+              "opacity": 1,
+              "x": 0,
+              "clipPath": "inset(0 0% 0 0 round 0px)",
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 640,
+              "ease": "expo.out"
+            }
+          }
+        },
+        "forward.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "x": 0,
+              "clipPath": "inset(0 0% 0 0 round 0px)"
+            },
+            "to": {
+              "opacity": 0,
+              "x": -34,
+              "clipPath": "inset(0 0 0 78% round 18px)"
+            },
+            "options": {
+              "duration": 420,
+              "ease": "power3.in"
+            }
+          }
+        },
+        "back.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "x": -56,
+              "clipPath": "inset(0 0 0 100% round 18px)",
+              "filter": "blur(8px)"
+            },
+            "to": {
+              "opacity": 1,
+              "x": 0,
+              "clipPath": "inset(0 0 0 0% round 0px)",
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 640,
+              "ease": "expo.out"
+            }
+          }
+        },
+        "back.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "x": 0,
+              "clipPath": "inset(0 0 0 0% round 0px)"
+            },
+            "to": {
+              "opacity": 0,
+              "x": 34,
+              "clipPath": "inset(0 78% 0 0 round 18px)"
+            },
+            "options": {
+              "duration": 420,
+              "ease": "power3.in"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "elastic-depth",
+      "target": "page.transition",
+      "label": "弹性纵深",
+      "description": "以明显的纵深压缩和回弹构成空间感强烈的切页。",
+      "tags": [
+        "page",
+        "gsap",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "x": 72,
+              "scale": 0.74,
+              "rotationY": -9,
+              "filter": "blur(12px)"
+            },
+            "to": {
+              "opacity": 1,
+              "x": 0,
+              "scale": 1,
+              "rotationY": 0,
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 760,
+              "ease": "elastic.out(1,0.42)"
+            }
+          }
+        },
+        "forward.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "x": 0,
+              "scale": 1,
+              "rotationY": 0
+            },
+            "to": {
+              "opacity": 0,
+              "x": -38,
+              "scale": 1.08,
+              "rotationY": 5,
+              "filter": "blur(5px)"
+            },
+            "options": {
+              "duration": 440,
+              "ease": "power3.in"
+            }
+          }
+        },
+        "back.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "x": -72,
+              "scale": 0.74,
+              "rotationY": 9,
+              "filter": "blur(12px)"
+            },
+            "to": {
+              "opacity": 1,
+              "x": 0,
+              "scale": 1,
+              "rotationY": 0,
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 760,
+              "ease": "elastic.out(1,0.42)"
+            }
+          }
+        },
+        "back.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "x": 0,
+              "scale": 1,
+              "rotationY": 0
+            },
+            "to": {
+              "opacity": 0,
+              "x": 38,
+              "scale": 1.08,
+              "rotationY": -5,
+              "filter": "blur(5px)"
+            },
+            "options": {
+              "duration": 440,
+              "ease": "power3.in"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gallery-hinge",
+      "target": "page.transition",
+      "label": "画廊铰链",
+      "description": "页面围绕侧边轴心翻入，像展板切换般清晰利落。",
+      "tags": [
+        "page",
+        "gsap",
+        "non-linear"
+      ],
+      "variants": {
+        "forward.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "xPercent": 12,
+              "rotationY": -18,
+              "scale": 0.92,
+              "transformOrigin": "0% 50%",
+              "filter": "blur(6px)"
+            },
+            "to": {
+              "opacity": 1,
+              "xPercent": 0,
+              "rotationY": 0,
+              "scale": 1,
+              "transformOrigin": "0% 50%",
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 680,
+              "ease": "back.out(1.45)"
+            }
+          }
+        },
+        "forward.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "xPercent": 0,
+              "rotationY": 0,
+              "transformOrigin": "100% 50%"
+            },
+            "to": {
+              "opacity": 0,
+              "xPercent": -8,
+              "rotationY": 13,
+              "transformOrigin": "100% 50%",
+              "filter": "blur(4px)"
+            },
+            "options": {
+              "duration": 430,
+              "ease": "power2.in"
+            }
+          }
+        },
+        "back.enter": {
+          "gsap": {
+            "from": {
+              "opacity": 0,
+              "xPercent": -12,
+              "rotationY": 18,
+              "scale": 0.92,
+              "transformOrigin": "100% 50%",
+              "filter": "blur(6px)"
+            },
+            "to": {
+              "opacity": 1,
+              "xPercent": 0,
+              "rotationY": 0,
+              "scale": 1,
+              "transformOrigin": "100% 50%",
+              "filter": "blur(0px)"
+            },
+            "options": {
+              "duration": 680,
+              "ease": "back.out(1.45)"
+            }
+          }
+        },
+        "back.leave": {
+          "gsap": {
+            "from": {
+              "opacity": 1,
+              "xPercent": 0,
+              "rotationY": 0,
+              "transformOrigin": "0% 50%"
+            },
+            "to": {
+              "opacity": 0,
+              "xPercent": 8,
+              "rotationY": -13,
+              "transformOrigin": "0% 50%",
+              "filter": "blur(4px)"
+            },
+            "options": {
+              "duration": 430,
+              "ease": "power2.in"
+            }
+          }
+        }
+      }
+    },
+    {
       "id": "halo-bloom",
       "target": "roller.finish",
       "label": "光环绽放",
@@ -712,6 +1003,112 @@
       }
     },
     {
+      "id": "magnetic-lock",
+      "target": "roller.finish",
+      "label": "磁场锁定",
+      "description": "结果从侧下方被磁场迅速吸附，并以弹性惯性锁定。",
+      "tags": [
+        "roller",
+        "gsap",
+        "non-linear",
+        "magnetic"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "x": -54,
+            "y": 34,
+            "scale": 0.68,
+            "rotation": -5,
+            "filter": "blur(10px)"
+          },
+          "to": {
+            "opacity": 1,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "filter": "blur(0px)"
+          },
+          "options": {
+            "duration": 820,
+            "ease": "elastic.out(1,0.32)"
+          }
+        }
+      }
+    },
+    {
+      "id": "royal-orbit",
+      "target": "roller.finish",
+      "label": "皇家环落",
+      "description": "结果沿短弧旋入并以克制回弹落在视觉中心。",
+      "tags": [
+        "roller",
+        "gsap",
+        "non-linear",
+        "orbit"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "x": 62,
+            "y": -34,
+            "scale": 0.72,
+            "rotation": 9,
+            "filter": "blur(8px) brightness(1.5)"
+          },
+          "to": {
+            "opacity": 1,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "filter": "blur(0px) brightness(1)"
+          },
+          "options": {
+            "duration": 900,
+            "ease": "back.out(1.9)"
+          }
+        }
+      }
+    },
+    {
+      "id": "spotlight-condense",
+      "target": "roller.finish",
+      "label": "聚光凝结",
+      "description": "高亮失焦的结果从远处收束，并带有明显的纵深聚焦。",
+      "tags": [
+        "roller",
+        "gsap",
+        "non-linear",
+        "spotlight"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "y": 42,
+            "scale": 1.28,
+            "rotationX": -10,
+            "filter": "blur(16px) brightness(2.4)"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1,
+            "rotationX": 0,
+            "filter": "blur(0px) brightness(1)"
+          },
+          "options": {
+            "duration": 780,
+            "ease": "expo.out"
+          }
+        }
+      }
+    },
+    {
       "id": "cascade-float",
       "target": "card.deal",
       "label": "层叠浮现",
@@ -896,6 +1293,114 @@
         "options": {
           "duration": 620,
           "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "spring-vault-deal",
+      "target": "card.deal",
+      "label": "弹簧跃牌",
+      "description": "卡片从牌桌下方跃入，围绕底边完成有重量感的回弹。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "vault"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "y": 78,
+            "scale": 0.66,
+            "rotationX": -24,
+            "transformOrigin": "50% 100%",
+            "filter": "blur(7px)"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1,
+            "rotationX": 0,
+            "transformOrigin": "50% 100%",
+            "filter": "blur(0px)"
+          },
+          "options": {
+            "duration": 760,
+            "ease": "elastic.out(1,0.38)"
+          }
+        }
+      }
+    },
+    {
+      "id": "dealer-fan",
+      "target": "card.deal",
+      "label": "荷官扇发",
+      "description": "明显的侧向位移与扇形旋转，模拟荷官快速发牌。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "fan"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "x": -82,
+            "y": 24,
+            "scale": 0.8,
+            "rotation": -14,
+            "transformOrigin": "0% 100%"
+          },
+          "to": {
+            "opacity": 1,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "transformOrigin": "50% 50%"
+          },
+          "options": {
+            "duration": 690,
+            "ease": "back.out(1.7)"
+          }
+        }
+      }
+    },
+    {
+      "id": "ceiling-drop",
+      "target": "card.deal",
+      "label": "穹顶落牌",
+      "description": "卡片从上方透视落下，以轻微前倾完成停靠。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "depth"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "y": -74,
+            "scale": 1.12,
+            "rotationX": 20,
+            "filter": "blur(9px)",
+            "transformOrigin": "50% 0%"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1,
+            "rotationX": 0,
+            "filter": "blur(0px)",
+            "transformOrigin": "50% 50%"
+          },
+          "options": {
+            "duration": 740,
+            "ease": "expo.out"
+          }
         }
       }
     },
@@ -1086,6 +1591,108 @@
         "options": {
           "duration": 760,
           "easing": "cubic-bezier(.2,1.35,.35,1)"
+        }
+      }
+    },
+    {
+      "id": "axis-reveal",
+      "target": "card.flip",
+      "label": "轴心翻面",
+      "description": "围绕纵轴进行清晰的 3D 揭晓，结束时带轻微回弹。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "3d"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0.35,
+            "rotationY": -82,
+            "scale": 0.82,
+            "transformOrigin": "50% 50%",
+            "filter": "brightness(1.7)"
+          },
+          "to": {
+            "opacity": 1,
+            "rotationY": 0,
+            "scale": 1,
+            "transformOrigin": "50% 50%",
+            "filter": "brightness(1)"
+          },
+          "options": {
+            "duration": 720,
+            "ease": "back.out(1.6)"
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-hinge",
+      "target": "card.flip",
+      "label": "纸页铰翻",
+      "description": "卡面像纸页从上沿翻开，具有鲜明的空间层次。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "hinge"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0.4,
+            "y": -18,
+            "rotationX": -68,
+            "scale": 0.9,
+            "transformOrigin": "50% 0%",
+            "filter": "blur(5px)"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "rotationX": 0,
+            "scale": 1,
+            "transformOrigin": "50% 0%",
+            "filter": "blur(0px)"
+          },
+          "options": {
+            "duration": 760,
+            "ease": "elastic.out(1,0.44)"
+          }
+        }
+      }
+    },
+    {
+      "id": "focus-snap",
+      "target": "card.flip",
+      "label": "焦点咬合",
+      "description": "从极小焦点迅速扩张并咬合到卡面，节奏紧凑有力。",
+      "tags": [
+        "card",
+        "gsap",
+        "non-linear",
+        "focus"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "scale": 0.54,
+            "rotation": 5,
+            "filter": "blur(13px) contrast(1.6)"
+          },
+          "to": {
+            "opacity": 1,
+            "scale": 1,
+            "rotation": 0,
+            "filter": "blur(0px) contrast(1)"
+          },
+          "options": {
+            "duration": 640,
+            "ease": "expo.out"
+          }
         }
       }
     },
@@ -1294,6 +1901,114 @@
       }
     },
     {
+      "id": "prize-pedestal",
+      "target": "lottery.finish",
+      "label": "奖台升格",
+      "description": "奖品从下方奖台般升起，并以厚重回弹完成揭晓。",
+      "tags": [
+        "lottery",
+        "gsap",
+        "non-linear",
+        "pedestal"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "y": 84,
+            "scale": 0.62,
+            "rotationX": -18,
+            "transformOrigin": "50% 100%",
+            "filter": "blur(12px) brightness(1.8)"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1,
+            "rotationX": 0,
+            "transformOrigin": "50% 100%",
+            "filter": "blur(0px) brightness(1)"
+          },
+          "options": {
+            "duration": 920,
+            "ease": "elastic.out(1,0.36)"
+          }
+        }
+      }
+    },
+    {
+      "id": "comet-lock",
+      "target": "lottery.finish",
+      "label": "彗星锁奖",
+      "description": "结果从右上方高速掠入，在中心急停并锁定。",
+      "tags": [
+        "lottery",
+        "gsap",
+        "non-linear",
+        "comet"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "x": 86,
+            "y": -52,
+            "scale": 0.64,
+            "rotation": 8,
+            "filter": "blur(14px) brightness(2.1)"
+          },
+          "to": {
+            "opacity": 1,
+            "x": 0,
+            "y": 0,
+            "scale": 1,
+            "rotation": 0,
+            "filter": "blur(0px) brightness(1)"
+          },
+          "options": {
+            "duration": 760,
+            "ease": "back.out(2.2)"
+          }
+        }
+      }
+    },
+    {
+      "id": "crown-radiance",
+      "target": "lottery.finish",
+      "label": "冠光降临",
+      "description": "结果以纵深旋转和强光凝聚，形成典礼式揭晓。",
+      "tags": [
+        "lottery",
+        "gsap",
+        "non-linear",
+        "ceremony"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "y": 38,
+            "scale": 0.5,
+            "rotationX": -22,
+            "filter": "blur(15px) brightness(2.6)",
+            "textShadow": "0 0 54px currentColor"
+          },
+          "to": {
+            "opacity": 1,
+            "y": 0,
+            "scale": 1,
+            "rotationX": 0,
+            "filter": "blur(0px) brightness(1)",
+            "textShadow": "0 0 0 rgba(255,255,255,0)"
+          },
+          "options": {
+            "duration": 880,
+            "ease": "expo.out"
+          }
+        }
+      }
+    },
+    {
       "id": "ambient-pulse",
       "target": "global.transition",
       "label": "环境脉冲",
@@ -1494,6 +2209,109 @@
         "options": {
           "duration": 1020,
           "easing": "cubic-bezier(.12,.82,.18,1)"
+        }
+      }
+    },
+    {
+      "id": "iris-field",
+      "target": "global.transition",
+      "label": "虹膜光场",
+      "description": "圆形光场从中心展开后回收，形成一次完整呼吸。",
+      "tags": [
+        "global",
+        "gsap",
+        "non-linear",
+        "iris"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "scale": 0.48,
+            "clipPath": "circle(8% at 50% 50%)",
+            "filter": "blur(16px)",
+            "background": "radial-gradient(circle, rgba(255,255,255,.28), rgba(255,110,200,.16) 36%, transparent 70%)"
+          },
+          "to": {
+            "opacity": 0.78,
+            "scale": 1.18,
+            "clipPath": "circle(72% at 50% 50%)",
+            "filter": "blur(5px)"
+          },
+          "options": {
+            "duration": 620,
+            "ease": "power3.inOut",
+            "repeat": 1,
+            "yoyo": true
+          }
+        }
+      }
+    },
+    {
+      "id": "diagonal-curtain",
+      "target": "global.transition",
+      "label": "斜幕流光",
+      "description": "斜向剪裁幕布穿过内容区域，再反向自然退场。",
+      "tags": [
+        "global",
+        "gsap",
+        "non-linear",
+        "curtain"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "xPercent": -28,
+            "clipPath": "inset(0 100% 0 0 round 28px)",
+            "background": "linear-gradient(120deg, rgba(80,180,255,.12), rgba(255,110,205,.22), transparent)"
+          },
+          "to": {
+            "opacity": 0.72,
+            "xPercent": 18,
+            "clipPath": "inset(0 0% 0 0 round 0px)"
+          },
+          "options": {
+            "duration": 560,
+            "ease": "expo.inOut",
+            "repeat": 1,
+            "yoyo": true
+          }
+        }
+      }
+    },
+    {
+      "id": "depth-pulse-field",
+      "target": "global.transition",
+      "label": "纵深脉冲场",
+      "description": "大范围光场从远处压近并回落，增强页面空间切换感。",
+      "tags": [
+        "global",
+        "gsap",
+        "non-linear",
+        "depth"
+      ],
+      "animation": {
+        "gsap": {
+          "from": {
+            "opacity": 0,
+            "scale": 0.36,
+            "rotationX": -16,
+            "filter": "blur(24px) brightness(1.8)",
+            "background": "radial-gradient(ellipse, rgba(120,190,255,.2), rgba(255,105,195,.14) 42%, transparent 72%)"
+          },
+          "to": {
+            "opacity": 0.68,
+            "scale": 1.24,
+            "rotationX": 0,
+            "filter": "blur(7px) brightness(1.1)"
+          },
+          "options": {
+            "duration": 680,
+            "ease": "power4.inOut",
+            "repeat": 1,
+            "yoyo": true
+          }
         }
       }
     }
