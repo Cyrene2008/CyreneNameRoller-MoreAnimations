@@ -13,11 +13,11 @@ const expectedTargets = Object.freeze([
   'global.transition'
 ])
 
-if (manifest.id !== 'cn.cyrene2008.more-animations' || !/^1\.1\.\d+$/.test(manifest.version)) {
+if (manifest.id !== 'cn.cyrene2008.more-animations' || !/^1\.\d+\.\d+$/.test(manifest.version)) {
   throw new Error('Unexpected plugin identity or release version')
 }
-if (manifest.engine?.min !== '1.2.0' || manifest.engine?.max !== '1.2.0') {
-  throw new Error('More Animations must target plugin API 1.2.0')
+if (manifest.api !== '1.5' || manifest.engine?.min !== '1.5.0' || manifest.engine?.max !== '1.5.0') {
+  throw new Error('More Animations must target plugin API 1.5.0')
 }
 if (!Array.isArray(pack.presets) || pack.presets.length < 54) {
   throw new Error('The animation pack must contain at least 54 presets')
@@ -50,9 +50,9 @@ for (const [target, count] of Object.entries(counts)) {
 }
 if (engines.gsap < 18 || engines.waapi < 30) throw new Error(`Expected a substantial mixed-engine pack, got GSAP=${engines.gsap}, WAAPI=${engines.waapi}`)
 
-const selectors = manifest.contributes?.pages
-  ?.flatMap(page => page.native?.controls || [])
-  .filter(control => control.type === 'animation-select') || []
+const selectors = (manifest.pages || manifest.contributes?.pages || [])
+  .flatMap(page => page.native?.controls || [])
+  .filter(control => control.type === 'animation-select')
 const selectorTargets = new Set(selectors.map(control => control.target))
 for (const target of expectedTargets) {
   if (!selectorTargets.has(target)) throw new Error(`Missing native animation selector for ${target}`)
