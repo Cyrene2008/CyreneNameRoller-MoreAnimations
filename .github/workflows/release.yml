@@ -12,14 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version-file: package.json
-      - run: bun install --frozen-lockfile
-      - run: bun run validate
-      - run: bun run build
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
       - name: Verify tag version
-        run: bun run verify:release-tag
+        run: npm run verify:release-tag
       - run: gh release create "$GITHUB_REF_NAME" dist/*.cnrp --generate-notes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,7 +8,6 @@ const publishFiles = Object.freeze([
   'LICENSE',
   'assets/icon.svg',
   'animations/signature.json',
-  'src/worker.js',
   'src/visual-surface.js',
   'src/visual-loop-controller.js'
 ])
