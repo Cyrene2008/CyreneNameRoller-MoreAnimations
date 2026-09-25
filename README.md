@@ -1,8 +1,12 @@
 # 更多动画 / More Animations
 
-CyreneNameRoller 官方动画扩展，版本 1.1.1，需要插件 API 1.2.0。
+CyreneNameRoller 官方动画扩展，版本 1.1.2，需要插件 API 1.4.0。
 
-Official motion extension for CyreneNameRoller, version 1.1.1. Plugin API 1.2.0 is required.
+Official motion extension for CyreneNameRoller, version 1.1.2. Plugin API 1.4.0 is required.
+
+插件声明采用拆分格式：`manifest.yml` 保存身份、图标与权限，`contributions.json` 保存 `settings`、`animationPacks` 与 `visualSurfaces`。两者不能与旧的 `manifest.json` 同时存在。
+
+The declaration is split: `manifest.yml` holds identity, icon and permissions, while `contributions.json` holds `settings`, `animationPacks` and `visualSurfaces`. Neither must coexist with a legacy `manifest.json`.
 
 ## 中文
 
@@ -38,10 +42,13 @@ npm run validate
 npm run build
 ```
 
-打包产物位于 `dist/more-animations-1.1.1.cnrp`。推送版本标签后，仓库内的 Release workflow 会验证版本、构建插件并上传 `.cnrp`，但本地开发不会自动发布。
+`validate` / `build` 使用 `vendor/` 中随附的 `@starcyrene/cyrene-name-roller` SDK（1.4.0），发布文件清单包含 `manifest.yml` 与 `contributions.json`，版本号由 SDK 的声明读取器从 `manifest.yml` 取得。
+
+打包产物位于 `dist/more-animations-1.1.2.cnrp`。推送版本标签后，仓库内的 Release workflow 会验证版本、构建插件并上传 `.cnrp`，但本地开发不会自动发布。
 
 ### 更新日志
 
+- 1.1.2：插件声明迁移到 `manifest.yml` + `contributions.json` 拆分格式（身份与权限在 YAML，`settings`／`animationPacks`／`visualSurfaces` 在 JSON）；声明引擎对齐 Plugin API 1.4.0，并使用随附的 1.4 SDK 校验与打包。
 - 1.1.1：新增 50%–200% 动画时长调节；页面动画完全替换宿主默认过渡，并改为只服从程序内动画性能开关。
 - 1.1.0：升级到 Plugin API 1.2.0，新增宿主 GSAP 动画，扩展为 54 个混合引擎预设，并显著区分剪裁、3D、弹性、轨道、聚光与全局光场机制。
 - 1.0.3：视觉层支持性能动画与减少动态效果偏好，停用时完全停止循环，恢复时防重复地重启单一计时器。
@@ -72,10 +79,11 @@ npm run validate
 npm run build
 ```
 
-The package is emitted as `dist/more-animations-1.1.1.cnrp`. The included validation and release workflows follow the official plugin repository conventions.
+The package is emitted as `dist/more-animations-1.1.2.cnrp`. The included validation and release workflows follow the official plugin repository conventions.
 
 ### Changelog
 
+- 1.1.2: Moved the plugin declaration to the split `manifest.yml` + `contributions.json` format (identity and permissions in YAML; `settings`, `animationPacks` and `visualSurfaces` in JSON), aligned the declared engine with Plugin API 1.4.0, and switched validation and packing to the bundled 1.4 SDK.
 - 1.1.1: Added a persistent 50%–200% duration control, made page presets fully replace the host transition, and made the in-app performance switch the only animation gate.
 - 1.1.0: Upgraded to Plugin API 1.2.0, added host-run GSAP motion, expanded to 54 mixed-engine presets, and introduced clearly distinct clipping, 3D, elastic, orbital, spotlight and ambient-field mechanisms.
 - 1.0.3: Added performance-animation and reduced-motion handling with a fully stopped loop and duplicate-safe restart.

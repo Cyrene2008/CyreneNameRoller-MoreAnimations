@@ -3,7 +3,8 @@ import path from 'node:path'
 
 const root = path.resolve(import.meta.dirname, '..')
 const publishFiles = Object.freeze([
-  'manifest.json',
+  'manifest.yml',
+  'contributions.json',
   'README.md',
   'LICENSE',
   'assets/icon.svg',

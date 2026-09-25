@@ -1,0 +1,25 @@
+# 插件身份声明（新格式）：贡献内容写在同目录 contributions.json。
+# 两者不能与 manifest.json 同时存在；打包后 cnrp 会向本文件注入 integrity，
+# 该清单覆盖除 manifest.yml 外的所有包内文件（含 contributions.json）。
+
+schemaVersion: 1
+id: cn.cyrene2008.more-animations
+name: 更多动画
+version: 1.1.2
+author: Cyrene2008
+description: 为页面切换、随机点名、翻牌与抽奖提供更丰富的高级动画和环境视觉效果。
+
+engine:
+  min: 1.4.0
+  max: 1.4.0
+
+icon: assets/icon.svg
+readme: README.md
+
+permissions:
+  - events:draw
+  - events:lifecycle
+  - storage:read
+  - storage:write
+  - ui:animations
+  - ui:visual-surfaces

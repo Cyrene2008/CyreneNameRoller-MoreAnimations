@@ -1,4 +1,4 @@
-import { defineVisualSurface, PluginEvents } from '@cyrene2008/cyrene-name-roller/plugin-sdk'
+import { defineVisualSurface, PluginEvents } from '@starcyrene/cyrene-name-roller/plugin-sdk'
 import { createVisualLoopController } from './visual-loop-controller.js'
 
 const DEFAULTS = Object.freeze({
