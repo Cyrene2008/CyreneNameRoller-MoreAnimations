@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import { readContributions, readIdentity } from './plugin-cli.mjs'
 
 const root = path.resolve(import.meta.dirname, '..')
-const manifest = JSON.parse(await fs.readFile(path.join(root, 'manifest.json'), 'utf8'))
+const { identity } = await readIdentity()
+const contributions = await readContributions()
 const pack = JSON.parse(await fs.readFile(path.join(root, 'animations', 'signature.json'), 'utf8'))
 const expectedTargets = Object.freeze([
   'page.transition',
@@ -13,11 +15,11 @@ const expectedTargets = Object.freeze([
   'global.transition'
 ])
 
-if (manifest.id !== 'cn.cyrene2008.more-animations' || !/^1\.1\.\d+$/.test(manifest.version)) {
+if (identity.id !== 'cn.cyrene2008.more-animations' || !/^1\.1\.\d+$/.test(identity.version)) {
   throw new Error('Unexpected plugin identity or release version')
 }
-if (manifest.engine?.min !== '1.2.0' || manifest.engine?.max !== '1.2.0') {
-  throw new Error('More Animations must target plugin API 1.2.0')
+if (identity.engine?.min !== '1.4.0' || identity.engine?.max !== '1.4.0') {
+  throw new Error('More Animations must target plugin API 1.4.0')
 }
 if (!Array.isArray(pack.presets) || pack.presets.length < 54) {
   throw new Error('The animation pack must contain at least 54 presets')
@@ -50,10 +52,11 @@ for (const [target, count] of Object.entries(counts)) {
 }
 if (engines.gsap < 18 || engines.waapi < 30) throw new Error(`Expected a substantial mixed-engine pack, got GSAP=${engines.gsap}, WAAPI=${engines.waapi}`)
 
-const selectors = manifest.contributes?.pages
-  ?.flatMap(page => page.native?.controls || [])
-  .filter(control => control.type === 'animation-select') || []
-const selectorTargets = new Set(selectors.map(control => control.target))
+// Settings live in the top-level `settings` block of contributions.json (never in pages[].native).
+const selectors = (contributions.settings?.sections || [])
+  .flatMap(section => section.fields || [])
+  .filter(field => field.type === 'animation-select')
+const selectorTargets = new Set(selectors.map(field => field.target))
 for (const target of expectedTargets) {
   if (!selectorTargets.has(target)) throw new Error(`Missing native animation selector for ${target}`)
 }
