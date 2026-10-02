@@ -37,12 +37,12 @@ The declaration is split: `manifest.yml` holds identity, icon and permissions, w
 ### 本地开发
 
 ```bash
-npm install
-npm run validate
-npm run build
+bun install
+bun run validate
+bun run build
 ```
 
-`validate` / `build` 使用 `vendor/` 中随附的 `@starcyrene/cyrene-name-roller` SDK（1.4.0），发布文件清单包含 `manifest.yml` 与 `contributions.json`，版本号由 SDK 的声明读取器从 `manifest.yml` 取得。
+`validate` / `build` 使用 `vendor/` 中随附的 `@starcyrene/cyrene-name-roller` SDK（1.4.1），发布文件清单包含 `manifest.yml` 与 `contributions.json`，版本号由 SDK 的声明读取器从 `manifest.yml` 取得。
 
 打包产物位于 `dist/more-animations-1.1.2.cnrp`。推送版本标签后，仓库内的 Release workflow 会验证版本、构建插件并上传 `.cnrp`，但本地开发不会自动发布。
 
@@ -74,9 +74,9 @@ The plugin can only register visual definitions and observe approved events. It 
 ### Development
 
 ```bash
-npm install
-npm run validate
-npm run build
+bun install
+bun run validate
+bun run build
 ```
 
 The package is emitted as `dist/more-animations-1.1.2.cnrp`. The included validation and release workflows follow the official plugin repository conventions.
